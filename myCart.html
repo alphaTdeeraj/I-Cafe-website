@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/my_cart.css" />
+    <title>My Cart Items</title>
+  </head>
+  <body>
+    <header>
+      <nav style="position: fixed; top: 0px; margin-bottom;">
+        <h3 id="company-name">I Cafe</h3>
+        <ul class="nav-links-container">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about-us">About us</a></li>
+          <li>
+            <a href="./myCart.html">My Cart <span id="num-items"></span></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <header><h3 class="main-heading">Your Items</h3></header>
+      <div id="items"></div>
+      <br />
+      <h2>Total Items is <span id="total-items"></span></h2>
+      <br />
+      <h2>Total Cost is <span id="cost"></span></h2>
+    </section>
+
+    <script src="./js/cartItems.js" defer></script>
+  </body>
+</html>

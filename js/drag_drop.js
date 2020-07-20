@@ -1,4 +1,4 @@
-const cartItems = [];
+let cartItems = [];
 const cart = document.getElementById("cart-img");
 const products = document.querySelectorAll(".product-container");
 const numItems = document.getElementById("num-items");
@@ -33,3 +33,11 @@ function drop(e) {
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
   numItems.innerHTML = cartItems.length;
 }
+
+function addCartDetails() {
+  cartItems = JSON.parse(localStorage.getItem("cartItems"));
+  cartItems = cartItems || [];
+
+  numItems.innerHTML = cartItems.length;
+}
+addCartDetails();
