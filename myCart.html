@@ -14,10 +14,7 @@
         <h3 id="company-name">I Cafe</h3>
         <ul class="nav-links-container">
           <li><a href="index.html">Home</a></li>
-          <li><a href="#about-us">About us</a></li>
-          <li>
-            <a href="./myCart.html">My Cart <span id="num-items"></span></a>
-          </li>
+          <li><a href="index.html#about-us">About us</a></li>
         </ul>
       </nav>
     </header>
@@ -29,6 +26,9 @@
       <br />
       <h2>Total Cost is <span id="cost"></span></h2>
     </section>
+    <button class="button button-extra" onclick="checkout()">
+      Check Out
+    </button>
 
     <script src="./js/cartItems.js" defer></script>
   </body>

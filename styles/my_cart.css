@@ -23,3 +23,15 @@ h2 {
   text-align: center;
   font-size: 28px;
 }
+
+.button-extra {
+  margin-left: 35%;
+  width: 400px;
+  margin-bottom: 20px;
+  transition: opacity 300ms 0s;
+}
+
+.button-extra:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
