@@ -1,0 +1,24 @@
+.wallpaper-container {
+  width: 100vw;
+  height: 80vh;
+  padding-top: 100px;
+  display: flex;
+  padding-right: 10%;
+  background-color: #ebebeb;
+}
+
+.text-container {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  padding-left: 40px;
+  flex-direction: column;
+}
+
+.text-container > p {
+  font-size: 23px;
+  font-weight: bold;
+}
+.wallpaper-container > img {
+  width: 30%;
+}
