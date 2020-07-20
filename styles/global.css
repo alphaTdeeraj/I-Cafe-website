@@ -28,3 +28,15 @@
   margin-top: 40px;
   text-decoration: underline;
 }
+
+body {
+  overflow-x: hidden;
+}
+
+#cart-img {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  width: 80px;
+  height: 80px;
+}

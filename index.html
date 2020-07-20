@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/wallpaper_container.css" />
     <link rel="stylesheet" href="./styles/about_us.css" />
     <link rel="stylesheet" href="./styles/card.css" />
+    <link rel="stylesheet" href="./styles/map.css" />
     <title>I Cafe</title>
   </head>
   <body>
@@ -17,7 +18,9 @@
         <ul class="nav-links-container">
           <li><a>Home</a></li>
           <li><a>About us</a></li>
-          <li><a>Cart</a></li>
+          <li>
+            <a>My Cart <span id="num-items"></span></a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -30,7 +33,7 @@
         </p>
         <button class="button">Order now</button>
       </div>
-      <img src="./images/wallpaper.png" alt="" />
+      <img src="./images/wallpaper.png" alt="Our wallpaper" />
     </section>
 
     <!-- ABOUT US  -->
@@ -61,6 +64,10 @@
       </div>
     </section>
 
+    <!-- cart -->
+    <div>
+      <img id="cart-img" src="./images/cart.svg" alt="cart Icon" />
+    </div>
 
     <!-- PRODUCTS CONTAINER -->
     <section id="products-container">
@@ -158,6 +165,6 @@
       </div>
     </section>
 
-    
+    <script src="./js/drag_drop.js" defer></script>
   </body>
 </html>

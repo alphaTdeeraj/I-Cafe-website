@@ -1,30 +1,35 @@
-const dragImg = document.querySelector(".drag-image");
-const startBox = document.getElementById("start-box");
-const endBox = document.getElementById("end-box");
-const section = document.querySelector("section");
-//DRAG EVENT LISTENERS
-dragImg.addEventListener("dragstart", dragStart);
-dragImg.addEventListener("dragend", dragEnd);
-endBox.addEventListener("dragover", dragOver);
-endBox.addEventListener("drop", drop);
-//DRAG FUNCTIONS
+const cartItems = [];
+const cart = document.getElementById("cart-img");
+const products = document.querySelectorAll(".product-container");
+const numItems = document.getElementById("num-items");
+//EVENT LISTENERS FOR DRAG AND DROP
+cart.addEventListener("dragover", dragOver);
+cart.addEventListener("drop", drop);
 
-function dragStart() {
-    console.log("drag has started");
-    
+for (const product of products) {
+  product.addEventListener("dragstart", dragStart);
+  product.addEventListener("dragend", dragEnd);
+}
+//FUNCTIONS FOR THE DRAG AND DROP
+
+function dragStart(e) {
+  this.classList.add("drag-start");
 }
 
-function dragEnd() {
-  console.log("drag has ended");
-  endBox.classList.remove("drag-over");
+function dragEnd(e) {
+  e.preventDefault();
+
+  this.classList.remove("drag-start");
 }
 
 function dragOver(e) {
   e.preventDefault();
-  this.classList.add("drag-over");
 }
 
 function drop(e) {
   e.preventDefault();
-  this.appendChild(dragImg);
+  const item = document.querySelector(".drag-start");
+  cartItems.push(item.innerHTML);
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  numItems.innerHTML = cartItems.length;
 }
