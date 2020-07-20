@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+nav {
+  width: 100vw;
+  height: 60px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #ebebeb;
+}
+
+nav > h3 {
+  flex: 1;
+  padding-left: 40px;
+  font-family: "Lobster", cursive;
+  font-size: 30px;
+  color: rgb(26, 22, 22);
+}
+
+nav > ul {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: bold;
+  color: rgb(51, 43, 43);
+  font-size: 15px;
+  list-style-type: none;
+  letter-spacing: 1px;
+}
