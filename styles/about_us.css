@@ -2,5 +2,22 @@
   margin-top: 20px;
   width: 100vw;
   height: 400px;
-  background-color: red;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#about-us-container > img {
+  width: 20%;
+  height: 90%;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-right: 30px;
+}
+
+#about-us-container > article {
+  width: 50%;
+  color: gray;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 40px;
 }
