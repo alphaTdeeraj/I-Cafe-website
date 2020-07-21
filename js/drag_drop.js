@@ -1,5 +1,5 @@
 let cartItems = [];
-const cart = document.getElementById("cart-img");
+const cart = document.getElementById("cart-container");
 const products = document.querySelectorAll(".product-container");
 const numItems = document.getElementById("num-items");
 //EVENT LISTENERS FOR DRAG AND DROP

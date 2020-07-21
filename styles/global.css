@@ -6,6 +6,10 @@
   font-family: "Nunito Sans", sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .button {
   height: 35px;
   width: 130px;
@@ -29,14 +33,23 @@
   text-decoration: underline;
 }
 
-body {
-  overflow-x: hidden;
-}
-
-#cart-img {
+#cart-container {
   position: fixed;
   top: 50%;
   right: 0;
+  width: 130px;
+  height: 130px;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+#cart-img {
   width: 80px;
   height: 80px;
+}
+
+.make-white {
+  color: white;
+  text-decoration: none;
 }
