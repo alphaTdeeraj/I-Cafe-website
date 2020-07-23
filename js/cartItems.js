@@ -21,9 +21,21 @@ function displayInfo() {
   costContainer.innerHTML = totalCost;
 }
 
-function checkout() {
+//this function will take the suffix url and navigates the user
+function navigateUser(suffixURL) {
+  const origin = window.location.origin;
+  const newURL = `${origin}/${suffixURL}`;
+  try {
+    window.location.replace(newURL);
+  } catch (e) {
+    console.error(`Invalid url , ${newURL}`);
+  }
+}
+
+//this function will set the cartItems key to empty array in the localStorage
+function clearCart() {
   localStorage.setItem("cartItems", JSON.stringify([]));
-  window.location.replace("http://127.0.0.1:5500/index.html");
+  navigateUser("index.html");
 }
 
 addItems();
