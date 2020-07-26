@@ -22,9 +22,50 @@
       </nav>
     </header>
 
-    <canvas id="myCanvas" width="600" height="400"></canvas>
-    <script src="./js/analytics.js"></script>
+    <!-- BAR GRAPH -->
+    <section id="graphContainer">
+      <div class="chartContainer" id="barChart">
+        <h3>Sales Of Products On Day Basis</h3>
+        <div class="buttonsContainer">
+          <button
+            class="button inactive active"
+            data-product-type="coldCoffee"
+            data-graph-type="barChart"
+            onclick="toggleActive(event);"
+          >
+            Cold Coffee
+          </button>
+          <button
+            class="button inactive"
+            data-product-type="hotCoffee"
+            data-graph-type="barChart"
+            onclick="toggleActive(event);"
+          >
+            Hot Coffee
+          </button>
+          <button
+            class="button inactive"
+            data-product-type="coffeeCups"
+            data-graph-type="barChart"
+            onclick="toggleActive(event);"
+          >
+            Coffee Cups
+          </button>
+
+          <button
+            class="button inactive"
+            data-product-type="coffeePowder"
+            data-graph-type="barChart"
+            onclick="toggleActive(event);"
+          >
+            Coffee Powder
+          </button>
+        </div>
+
+        <svg id="barChartSVG"></svg>
+      </div>
+    </section>
+
+    <script src="./js/analytics/graph.js"></script>
   </body>
 </html>
-
-<!-- style="background-color: rgba(237, 250, 248, 0.8)" -->

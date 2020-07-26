@@ -1,4 +1,64 @@
-#myCanvas {
+#graphContainer {
+  width: 70%;
+  height: 100vh;
+  margin: auto;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chartContainer {
+  margin-bottom: 5px;
+  width: 100%;
+  height: 100% !important;
+}
+
+.chartContainer h3 {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.buttonsContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.inactive {
+  background-color: rgba(26, 22, 22, 0.4);
+}
+.inactive:hover {
+  background-color: rgba(26, 22, 22, 0.7);
+  cursor: pointer;
+}
+.active {
+  background-color: rgb(26, 22, 22);
+}
+
+.myCanvas {
   background-color: rgba(237, 250, 248, 0.8);
-  margin: 80px 30vw;
+}
+
+svg {
+  margin-top: 10px;
+
+  width: 100%;
+  height: 80%;
+  margin-bottom: 5px;
+}
+
+.animateRect {
+  animation-name: animateOpacity;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animateOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
