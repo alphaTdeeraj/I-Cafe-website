@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="./css/about_us.css" />
     <link rel="stylesheet" href="./css/card.css" />
     <link rel="stylesheet" href="./css/map.css" />
+    <link rel="stylesheet" href="./css/drag.css" />
+    <script type="module" src="./js/checkAuthentication.js"></script>
+
     <title>I Cafe</title>
   </head>
   <body>
@@ -73,101 +76,14 @@
     </div>
 
     <!-- PRODUCTS CONTAINER -->
-    <section id="products-container">
+    <section>
       <header>
         <h4 class="main-heading">Our Products</h4>
       </header>
-      <div class="products-container">
-        <div class="product-container" draggable="true">
-          <figure>
-            <img draggable="false" src="./images/products/p_1.jpeg" />
-            <figcaption>Cold Coffee</figcaption>
-          </figure>
-          <p><bold>Cost</bold> : Rs 343</p>
-          <button class="button">Know More</button>
-        </div>
-        <div class="product-container" draggable="true">
-          <figure>
-            <img draggable="false" src="./images/products/p_1.jpeg" />
-            <figcaption>Cold Coffee</figcaption>
-          </figure>
-          <p><bold>Cost</bold> : Rs 343</p>
-          <button class="button">Know More</button>
-        </div>
-        <div class="product-container" draggable="true">
-          <figure>
-            <img draggable="false" src="./images/products/p_1.jpeg" />
-            <figcaption>Cold Coffee</figcaption>
-          </figure>
-          <p><bold>Cost</bold> : Rs 343</p>
-          <button class="button">Know More</button>
-        </div>
 
-        <div class="product-container" draggable="true">
-          <figure>
-            <img draggable="false" src="./images/products/p_1.jpeg" />
-            <figcaption>Cold Coffee</figcaption>
-          </figure>
-          <p><bold>Cost</bold> : Rs 343</p>
-          <button class="button">Know More</button>
-        </div>
-
-        <div class="product-container" draggable="true">
-          <figure>
-            <img draggable="false" src="./images/products/p_1.jpeg" />
-            <figcaption>Cold Coffee</figcaption>
-          </figure>
-          <p><bold>Cost</bold> : Rs 343</p>
-          <button class="button">Know More</button>
-        </div>
-
-        <div class="product-container" draggable="true">
-          <figure>
-            <img draggable="false" src="./images/products/p_1.jpeg" />
-            <figcaption>Cold Coffee</figcaption>
-          </figure>
-          <p><bold>Cost</bold> : Rs 343</p>
-          <button class="button">Know More</button>
-        </div>
-
-        <div class="product-container" draggable="true">
-          <figure>
-            <img draggable="false" src="./images/products/p_1.jpeg" />
-            <figcaption>Our Special Coffee</figcaption>
-          </figure>
-          <p><bold>Cost</bold> : Rs 343</p>
-          <button class="button">Know More</button>
-        </div>
-
-        <div class="product-container" draggable="true">
-          <figure>
-            <img draggable="false" src="./images/products/p_1.jpeg" />
-            <figcaption>Cold Coffee</figcaption>
-          </figure>
-          <p><bold>Cost</bold> : Rs 343</p>
-          <button class="button">Know More</button>
-        </div>
-
-        <div class="product-container" draggable="true">
-          <figure>
-            <img draggable="false" src="./images/products/p_1.jpeg" />
-            <figcaption>Cold Coffee</figcaption>
-          </figure>
-          <p><bold>Cost</bold> : Rs 343</p>
-          <button class="button">Know More</button>
-        </div>
-
-        <div class="product-container" draggable="true">
-          <figure>
-            <img draggable="false" src="./images/products/p_1.jpeg" />
-            <figcaption>Cold Coffee</figcaption>
-          </figure>
-          <p><bold>Cost</bold> : Rs 343</p>
-          <button class="button">Know More</button>
-        </div>
-      </div>
+      <!-- items are added to this container dynamically using javascript -->
+      <div id="products-container"></div>
     </section>
-
-    <script src="./js/drag_drop.js" defer></script>
+    <script type="module" src="./js/drag_drop.js" defer></script>
   </body>
 </html>
