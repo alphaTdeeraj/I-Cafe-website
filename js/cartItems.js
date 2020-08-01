@@ -1,4 +1,4 @@
-import { addProducts } from "./utils.js";
+import { addProducts, addSales, makeRequest } from "./utils.js";
 
 let itemsContainer = document.getElementById("items");
 let totalItemsContainer = document.getElementById("total-items");
@@ -39,12 +39,29 @@ function navigateUser(suffixURL) {
 }
 
 //this function will set the cartItems key to empty array in the localStorage
-function clearCart(e) {
+async function clearCart(e) {
   e.preventDefault();
-  console.log("button was clicked");
-  localStorage.setItem("cart", JSON.stringify([]));
-  localStorage.setItem("numItems", JSON.stringify(0));
-  navigateUser("index.html");
+  checkoutButton.setAttribute("disabled", true);
+  checkoutButton.innerText = "Checking Out ...";
+  checkoutButton.style.opacity = 0.5;
+  try {
+    const checkOutURL = `${window.app.baseURL}/checkout`;
+    console.log(checkOutURL);
+    const currentSale = addSales(cartItems);
+    const data = {
+      salesData: currentSale,
+    };
+    await makeRequest("POST", checkOutURL, JSON.stringify(data));
+    localStorage.setItem("cart", JSON.stringify([]));
+    localStorage.setItem("numItems", JSON.stringify(0));
+    navigateUser("index.html");
+  } catch (err) {
+    console.log(err);
+    console.log("there was some error");
+  }
+  checkoutButton.setAttribute("disabled", false);
+  checkoutButton.innerText = "Check Out";
+  checkoutButton.style.opacity = 1;
 }
 
 displayInfo();

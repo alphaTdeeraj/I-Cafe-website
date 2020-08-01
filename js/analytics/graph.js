@@ -1,15 +1,5 @@
-//this function will create animation values for the y attribute
-function createYValues(height) {
-  const maxHeight = svgMaxHeight;
-  const values = [];
-  const heightPercentage = Math.floor((100 * height) / maxHeight);
-  const percentageOffset = Math.floor(heightPercentage / 5);
-  for (let start = 1; start < 5; start++) {
-    values.push(100 - percentageOffset * start);
-  }
-  values.push(100 - heightPercentage);
-  return values.join("%;") + "%;";
-}
+import { makeRequest } from "../utils.js";
+const graphButtons = document.querySelectorAll(".button");
 
 //this function will create a svg text element
 function createText(text, x, y, color) {
@@ -17,7 +7,7 @@ function createText(text, x, y, color) {
 }
 
 function getYAxisValues(actualMaxValue) {
-  const maxValue = actualMaxValue + 100;
+  const maxValue = actualMaxValue * 1.2;
   const currentXPosition = 0;
   let percentage = 0;
   const yAxisText = [];
@@ -159,16 +149,8 @@ const strokeColors = [
   "rgba(209, 126, 75, 0.8)",
 ];
 
-const data = {
-  coldCoffee: [130, 100, 200, 100, 53, 150, 210],
-  hotCoffee: [200, 150, 100, 350, 300, 200, 60],
-  coffeeCups: [100, 120, 130, 160, 200, 200, 120],
-  coffeePowder: [300, 300, 150, 200, 220, 222, 100],
-};
-
 //this is the data which will be used by the barChart
-const profitValues = [130, 100, 200, 100, 53, 150, 210];
-const days = ["Mon", "Tue", "Wed", "Thr", "Fri", "Sat", "Sun"];
+const days = ["Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat"];
 let svgElement = document.getElementById("barChartSVG");
 const svgMaxHeight = svgElement.clientHeight;
 const svgMaxWidth = svgElement.clientWidth;
@@ -177,4 +159,21 @@ svgElement.setAttribute(
   `0 0 ${svgElement.clientWidth} ${svgMaxHeight}`
 );
 
-displayChart("coldCoffee");
+let data;
+
+async function getAnalyticsData() {
+  try {
+    const analyticsURL = `${window.app.baseURL}/analytics`;
+    const requestData = await makeRequest("GET", analyticsURL);
+    const analyticsData = requestData["salesData"];
+    data = analyticsData;
+    displayChart("cold_coffee");
+  } catch (err) {
+    console.log("cold not get the analytics data");
+  }
+}
+
+graphButtons.forEach((element) => {
+  element.addEventListener("click", toggleActive);
+});
+getAnalyticsData();

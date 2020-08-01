@@ -1,8 +1,9 @@
-const makeRequest = (method, url) =>
+const makeRequest = (method, url, data = {}) =>
   $.ajax({
     method: method,
     url: url,
     contentType: "application/json",
+    data: data,
     dataType: "json",
   });
 
@@ -19,8 +20,7 @@ const getProductByID = (id, productsList) => {
   }
 };
 
-const addSales = () => {
-  const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+const addSales = (cartItems) => {
   const categorySales = {
     cold_coffee: 0,
     hot_coffee: 0,
@@ -31,7 +31,6 @@ const addSales = () => {
     const category = cartItem["category"];
     categorySales[category]++;
   }
-  console.log(categorySales);
   return categorySales;
 };
 
@@ -48,16 +47,15 @@ const productTemplate = (id, name, cost, imageURL) => {
   return productHTML;
 };
 
-
 //this function will add create the html for the all the products from the response
-const  addProducts = (items)=> {
+const addProducts = (items) => {
   let productContainerHTML = "";
   for (const product of items) {
     const { id, name, cost, imageUrl } = product;
     productContainerHTML += productTemplate(id, name, cost, imageUrl);
   }
   return productContainerHTML;
-}
+};
 export {
   getDifference,
   makeRequest,
