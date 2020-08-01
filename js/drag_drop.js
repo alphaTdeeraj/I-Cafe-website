@@ -1,31 +1,9 @@
-import { getDifference, makeRequest, getProductByID } from "./utils.js";
+import { makeRequest, getProductByID, addProducts } from "./utils.js";
 
 const productsContainer = $("#products-container");
 const cart = document.getElementById("cart-container");
 const numCartItems = $("#num-items");
 let cartItems = [];
-//this function creates the template for the product
-function productTemplate(id, name, cost, imageURL) {
-  const productHTML = `<div class="product-container" draggable="true" data-id="${id}">
-          <figure>
-            <img draggable="false" src="./images/products/${imageURL}" alt="${name} image"/>
-            <figcaption>${name}</figcaption>
-          </figure>
-          <p><bold>Cost</bold> : Rs ${cost}</p>
-          <button class="button">Know More</button>
-        </div>`;
-  return productHTML;
-}
-
-//this function will add create the html for the all the products from the response
-function addProducts(items) {
-  let productContainerHTML = "";
-  for (const product of items) {
-    const { id, name, cost, imageUrl } = product;
-    productContainerHTML += productTemplate(id, name, cost, imageUrl);
-  }
-  return productContainerHTML;
-}
 
 //this function will GET the products from the server
 async function loadProducts() {
