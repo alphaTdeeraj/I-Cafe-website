@@ -1,9 +1,8 @@
 const app = {
-  baseURL: "http://localhost:8080/",
-  loggedIn: false,
-  items: [],
+  baseURL: "http://localhost:8080",
+  products: [],
   sales: {},
   cartItems: [],
 };
 
-export default app;
+window.app = app;
