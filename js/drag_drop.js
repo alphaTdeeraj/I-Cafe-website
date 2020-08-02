@@ -34,7 +34,6 @@ function onMouseDown(e) {
   parentDiv = getParentDiv($(e.target));
   initialX = e.clientX;
   initialY = e.clientY;
-  console.log(initialX, initialY);
   initialWidth = parentDiv.width();
   initialHeight = parentDiv.height();
   parentDiv.attr({ id: "draggedElement" }).css({ "z-index": 10 });

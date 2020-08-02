@@ -1,4 +1,4 @@
-import { addProducts, addSales, makeRequest } from "./utils.js";
+import { addProducts, addSales, makeRequest, navigateUser } from "./utils.js";
 
 let itemsContainer = document.getElementById("items");
 let totalItemsContainer = document.getElementById("total-items");
@@ -25,17 +25,6 @@ function displayInfo() {
   totalItemsContainer.innerText = cartItems.length;
   costContainer.innerHTML = calculateTotalCost();
   displayCartItems();
-}
-
-//this function will take the suffix url and navigates the user
-function navigateUser(suffixURL) {
-  const origin = window.location.origin;
-  const newURL = `${origin}/${suffixURL}`;
-  try {
-    window.location.replace(newURL);
-  } catch (e) {
-    console.error(`Invalid url , ${newURL}`);
-  }
 }
 
 //this function will set the cartItems key to empty array in the localStorage

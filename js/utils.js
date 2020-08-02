@@ -56,6 +56,17 @@ const addProducts = (items) => {
   }
   return productContainerHTML;
 };
+
+const navigateUser = (suffixURL) => {
+  const origin = window.location.origin;
+  const newURL = `${origin}/${suffixURL}`;
+  console.log(newURL);
+  try {
+    window.location.replace(newURL);
+  } catch (e) {
+    console.error(`Invalid url , ${newURL}`);
+  }
+};
 export {
   getDifference,
   makeRequest,
@@ -63,4 +74,5 @@ export {
   addSales,
   productTemplate,
   addProducts,
+  navigateUser,
 };

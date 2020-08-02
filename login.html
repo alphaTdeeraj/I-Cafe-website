@@ -12,7 +12,7 @@
     ></script>
   </head>
   <body>
-    <form class="form-container" onsubmit="login(event)">
+    <form class="form-container" method="POST">
       <h3 class="main-heading">Login</h3>
       <input
         id="email"
@@ -31,11 +31,11 @@
         autofocus="true"
         required
       />
-      <button type="submit" class="button">
+      <button type="button" class="button">
         Login
       </button>
     </form>
     <script src="./js/global.js"></script>
-    <script src="./js/authenticate.js"></script>
+    <script type="module" src="./js/authenticate.js"></script>
   </body>
 </html>
