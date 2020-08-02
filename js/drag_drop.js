@@ -1,4 +1,4 @@
-import { makeRequest, getProductByID, addProducts } from "./utils.js";
+// import { makeRequest, getProductByID, addProducts } from "./utils.js";
 
 const productsContainer = $("#products-container");
 const cart = $("#cart-container");

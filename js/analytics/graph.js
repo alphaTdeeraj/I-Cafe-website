@@ -1,4 +1,4 @@
-import { makeRequest } from "../utils.js";
+// import { makeRequest } from "../utils.js";
 const graphButtons = document.querySelectorAll(".button");
 
 //this function will create a svg text element

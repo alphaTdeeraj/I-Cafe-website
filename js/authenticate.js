@@ -1,4 +1,4 @@
-import { makeRequest, navigateUser } from "./utils.js";
+// import { makeRequest, navigateUser } from "./utils.js";
 const submitButton = $("button");
 
 async function login(event) {

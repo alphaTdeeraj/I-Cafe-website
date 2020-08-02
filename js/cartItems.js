@@ -1,4 +1,4 @@
-import { addProducts, addSales, makeRequest, navigateUser } from "./utils.js";
+// import { addProducts, addSales, makeRequest, navigateUser } from "./utils.js";
 
 let itemsContainer = document.getElementById("items");
 let totalItemsContainer = document.getElementById("total-items");

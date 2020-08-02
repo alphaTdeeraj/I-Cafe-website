@@ -58,7 +58,8 @@ const addProducts = (items) => {
 };
 
 const navigateUser = (suffixURL) => {
-  const origin = window.location.origin;
+  const lastIndex = suffixURL.lastIndexOf("/");
+  const origin = suffixURL.slice(0, lastIndex + 1);
   const newURL = `${origin}/${suffixURL}`;
   console.log(newURL);
   try {
@@ -67,12 +68,12 @@ const navigateUser = (suffixURL) => {
     console.error(`Invalid url , ${newURL}`);
   }
 };
-export {
-  getDifference,
-  makeRequest,
-  getProductByID,
-  addSales,
-  productTemplate,
-  addProducts,
-  navigateUser,
-};
+// export {
+//   getDifference,
+//   makeRequest,
+//   getProductByID,
+//   addSales,
+//   productTemplate,
+//   addProducts,
+//   navigateUser,
+// };
