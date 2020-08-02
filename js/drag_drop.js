@@ -48,7 +48,7 @@ function onMouseMove(e) {
   topOffset = e.clientY - initialY;
 
   $("#draggedElement").css({ top: `${topOffset}px`, left: `${leftOffset}px` });
-  changeStyle(Math.abs(getDiff(e)));
+  changeStyle(getDiff(e));
 }
 
 function onMouseUp(e) {
@@ -104,9 +104,15 @@ function isOverCart(e) {
 }
 
 function changeStyle(diff) {
-  let fontSize = parseInt(Math.max(1, diff / 10));
-  fontSize = parseInt(Math.min(25, fontSize));
-  parentDiv.css({ "font-size": `${fontSize}px` });
+  if (diff > 0) {
+    let fontSize = parseInt(Math.max(10, diff / 10));
+    fontSize = parseInt(Math.min(25, fontSize));
+    const width = parseInt(Math.max(40, diff / 4.2));
+    const height = parseInt(Math.max(60, diff / 4));
+    parentDiv.css({
+      "font-size": `${fontSize}px`,
+    });
+  }
 }
 
 function getDiff(e) {
