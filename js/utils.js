@@ -36,7 +36,7 @@ const addSales = (cartItems) => {
 
 //this function will create an html of product the element
 const productTemplate = (id, name, cost, imageURL) => {
-  const productHTML = `<div class="product-container" draggable="true" data-id="${id}">
+  const productHTML = `<div class="product-container" draggable="false" data-id="${id}">
           <figure>
             <img draggable="false" src="./images/products/${imageURL}" alt="${name} image"/>
             <figcaption>${name}</figcaption>

@@ -35,14 +35,15 @@ body {
 
 #cart-container {
   position: fixed;
-  top: 50%;
+  top: 30%;
   right: 0;
-  width: 130px;
-  height: 130px;
-
+  width: 200px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  padding-top: 200px;
+  z-index: 1;
 }
 
 #cart-img {

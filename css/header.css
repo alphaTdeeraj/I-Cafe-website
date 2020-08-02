@@ -8,6 +8,7 @@ nav {
   align-items: center;
   justify-content: space-around;
   background-color: #ebebeb;
+  z-index: 11;
 }
 
 nav > h3 {
