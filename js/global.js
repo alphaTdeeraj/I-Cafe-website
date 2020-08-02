@@ -1,5 +1,5 @@
 const app = {
-  baseURL: "http://localhost:8080",
+  baseURL: "https://i-coffee-backend.herokuapp.com",
   products: [],
   sales: {},
   cartItems: [],

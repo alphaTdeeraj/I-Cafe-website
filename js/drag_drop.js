@@ -34,6 +34,7 @@ function onMouseDown(e) {
   parentDiv = getParentDiv($(e.target));
   initialX = e.clientX;
   initialY = e.clientY;
+  console.log(initialX, initialY);
   initialWidth = parentDiv.width();
   initialHeight = parentDiv.height();
   parentDiv.attr({ id: "draggedElement" }).css({ "z-index": 10 });
@@ -48,12 +49,12 @@ function onMouseMove(e) {
   topOffset = e.clientY - initialY;
 
   $("#draggedElement").css({ top: `${topOffset}px`, left: `${leftOffset}px` });
-  changeStyle(getDiff());
+  changeStyle(Math.abs(getDiff(e)));
 }
 
 function onMouseUp(e) {
   e.preventDefault();
-  if (isOverCart()) {
+  if (isOverCart(e)) {
     addItemToCart();
   }
   parentDiv.off();
@@ -80,9 +81,6 @@ function getParentDiv(currentElement) {
 function addDragEvent() {
   const productContainer = document.querySelectorAll(".product-container");
   productContainer.forEach((element) => {
-    // element.addEventListener("dragstart", dragStart);
-    // element.addEventListener("drag", drag);
-    // element.addEventListener("dragend", dragEnd);
     element.onmousedown = onMouseDown;
   });
 }
@@ -97,33 +95,25 @@ function addItemToCart() {
   localStorage.setItem("numItems", cartItems.length);
 }
 
-function isOverCart() {
-  console.log("cartXPosition", cartXPosition);
-  console.log("leftOffset", leftOffset);
-  const diff = getDiff();
-  console.log("diff is ", diff);
-  if (diff <= 50) {
+function isOverCart(e) {
+  const diff = getDiff(e);
+
+  if (diff < -60) {
     return true;
   }
   return false;
 }
 
 function changeStyle(diff) {
-  console.log("entered the changeStyle");
-  const fontSize = parseInt(Math.min(20, diff / 50));
-  const width = parseInt(Math.max(0, diff / 4));
-  const height = parseInt(Math.max(0, diff / 4));
-  console.log(fontSize);
+  let fontSize = parseInt(Math.max(1, diff / 10));
+  fontSize = parseInt(Math.min(25, fontSize));
   parentDiv.css({ "font-size": `${fontSize}px` });
 }
 
-function getDiff() {
-  return Math.abs(cartXPosition - leftOffset);
+function getDiff(e) {
+  return cartXPosition - e.clientX;
 }
 
 loadProducts();
-
-// cart.addEventListener("dragover", dragOver);
-// cart.addEventListener("drop", drop);
 
 numCartItems.text(0 || JSON.parse(localStorage.getItem("numItems")));
